@@ -5,7 +5,8 @@ from PIL import Image
 from torch.utils import data
 #from mypath import Path
 from torchvision import transforms
-from dataloaders import custom_transforms as tr
+
+from ../../dataloaders import custom_transforms as tr
 
 class CityscapesSegmentationZS(data.Dataset):
     NUM_CLASSES = 4
