@@ -27,6 +27,9 @@ def decode_segmap(label_mask, dataset, plot=False):
     elif dataset == 'cityscapes':
         n_classes = 19
         label_colours = get_cityscapes_labels()
+    elif dataset == "cityscapes_zs":
+        n_classes = 4
+        label_colours = get_cityscapes_zs_labels()
     else:
         raise NotImplementedError
 
@@ -86,6 +89,13 @@ def get_cityscapes_labels():
         [0, 80, 100],
         [0, 0, 230],
         [119, 11, 32]])
+
+def get_cityscapes_zs_labels():
+    return np.array([
+        [128, 64, 128],
+        [244, 35, 232],
+        [70, 70, 70],
+        [0, 0, 0]])
 
 
 def get_pascal_labels():
