@@ -3,6 +3,7 @@ import numpy as np
 import scipy.misc as m
 from PIL import Image
 from torch.utils import data
+import glob
 #from mypath import Path
 from torchvision import transforms
 import sys
@@ -22,7 +23,8 @@ class CityscapesSegmentationZS(data.Dataset):
         self.images_base = os.path.join(self.root, 'images', self.split)
         self.annotations_base = os.path.join(self.root, 'labels', self.split)
 
-        self.files[split] = self.recursive_glob(rootdir=self.annotations_base, suffix='.png')
+        self.files[split] = glob.glob(os.path.join(self.annotations_base, "*.png)        
+        # self.recursive_glob(rootdir=self.annotations_base, suffix='.png')
 
         self.void_classes = [0, 1, 2, 3, 4, 5, 6, 9, 10, 14, 15, 16, 18, 29, 30, -1, 8, 11, 12, 13, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 31, 32, 33]
         self.valid_classes = [4, 5, 6, 7]
