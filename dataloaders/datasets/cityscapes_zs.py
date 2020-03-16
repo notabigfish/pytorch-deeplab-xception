@@ -3,14 +3,14 @@ import numpy as np
 import scipy.misc as m
 from PIL import Image
 from torch.utils import data
-from mypath import Path
+#from mypath import Path
 from torchvision import transforms
 from dataloaders import custom_transforms as tr
 
 class CityscapesSegmentationZS(data.Dataset):
     NUM_CLASSES = 4
 
-    def __init__(self, args, root=Path.db_root_dir('cityscapes_zs'), split="train"):
+    def __init__(self, args, root='/content/drive/My\ Drive/datasets/A'), split="train"):
 
         self.root = root
         self.split = split
