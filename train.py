@@ -183,7 +183,7 @@ def main():
     parser.add_argument('--out-stride', type=int, default=16,
                         help='network output stride (default: 8)')
     parser.add_argument('--dataset', type=str, default='pascal',
-                        choices=['pascal', 'coco', 'cityscapes'],
+                        choices=['pascal', 'coco', 'cityscapes', 'cityscapes_zs'],
                         help='dataset name (default: pascal)')
     parser.add_argument('--use-sbd', action='store_true', default=True,
                         help='whether to use SBD dataset (default: True)')
@@ -266,6 +266,7 @@ def main():
         epoches = {
             'coco': 30,
             'cityscapes': 200,
+            'cityscapes_zs': 200,
             'pascal': 50,
         }
         args.epochs = epoches[args.dataset.lower()]
@@ -280,6 +281,7 @@ def main():
         lrs = {
             'coco': 0.1,
             'cityscapes': 0.01,
+            'cityscapes_zs': 0.01,
             'pascal': 0.007,
         }
         args.lr = lrs[args.dataset.lower()] / (4 * len(args.gpu_ids)) * args.batch_size
