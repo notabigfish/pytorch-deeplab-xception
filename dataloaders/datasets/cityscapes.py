@@ -10,7 +10,7 @@ from dataloaders import custom_transforms as tr
 class CityscapesSegmentationZS(data.Dataset):
     NUM_CLASSES = 4
 
-    def __init__(self, args, root=Path.db_root_dir('A'), split="train"):
+    def __init__(self, args, root=Path.db_root_dir('cityscapes_zs'), split="train"):
 
         self.root = root
         self.split = split
