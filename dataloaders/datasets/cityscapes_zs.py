@@ -53,8 +53,8 @@ class CityscapesSegmentationZS(data.Dataset):
             return self.transform_tr(sample)
         elif self.split == 'val':
             return self.transform_val(sample)
-        elif self.split == 'test':
-            return self.transform_ts(sample)
+        #elif self.split == 'test':
+        #   return self.transform_ts(sample)
 
     def encode_segmap(self, mask):
         # Put all void classes to zero
