@@ -6,7 +6,7 @@ from torch.utils import data
 #from mypath import Path
 from torchvision import transforms
 import sys
-sys.path.append("../../")
+sys.path.append("/content/drive/My Drive/pytorch-deeplab-xception")
 from dataloaders import custom_transforms as tr
 
 class CityscapesSegmentationZS(data.Dataset):
