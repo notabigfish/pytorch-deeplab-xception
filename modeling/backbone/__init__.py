@@ -1,4 +1,5 @@
-from modeling.backbone import resnet, xception, drn, mobilenet, EfficientNet
+from .model import EfficientNet
+from modeling.backbone import resnet, xception, drn, mobilenet
 from .utils import (
     GlobalParams,
     BlockArgs,
